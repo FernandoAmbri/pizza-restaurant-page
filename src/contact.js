@@ -18,7 +18,7 @@ function createSectionTitle() {
   const divBackground = document.createElement("div");
   const h1 = document.createElement("h1");
 
-  h1.textContent = "Contact us";
+  h1.textContent = "Contacto";
 
   divBackground.classList.add("image-waitress-background");
   divBackground.appendChild(h1);
@@ -73,7 +73,7 @@ function createForm() {
 
   formTitle.innerHTML = `
     <i class="fa-solid fa-envelope"></i>
-    <h3>Message us</h3>`;
+    <h3>Tu opinión importa</h3>`;
 
   formContent.innerHTML = `
     <input

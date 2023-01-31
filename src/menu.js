@@ -18,7 +18,7 @@ function createSectionTitle() {
   const divTitleBackground = document.createElement("div");
   const h1 = document.createElement("h1");
 
-  h1.textContent = "Menu";
+  h1.textContent = "Menú";
   divTitleBackground.classList.add("menu_image_background");
 
   divTitleBackground.appendChild(h1);
@@ -32,7 +32,7 @@ function createSectionPizzas() {
   const h2 = document.createElement("h2");
   const divContainerPizzas = document.createElement("div");
 
-  h2.textContent = "Pizza";
+  h2.textContent = "Pizzas";
 
   objPizzas.forEach((pizza) => {
     const div = document.createElement("div");

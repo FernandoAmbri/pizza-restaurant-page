@@ -16,29 +16,29 @@ function createContentAboutUs() {
 
 function createSectionTitle() {
   const section = document.createElement("section");
-  const div_image_background = document.createElement("div");
-  const div_introduction = document.createElement("div");
-  const div_buttons = document.createElement("div");
-  const button_legacy = document.createElement("button");
-  const button_history = document.createElement("button");
+  const divImgBackground = document.createElement("div");
+  const divIntro = document.createElement("div");
+  const divButtons = document.createElement("div");
+  const btnLegacy = document.createElement("button");
+  const btnHistory = document.createElement("button");
   const p = document.createElement("p");
 
-  p.textContent = "Our goal is to give you something unique";
-  button_legacy.textContent = "OUR LEGACY";
-  button_history.textContent = "OUR HISTORY";
+  p.textContent = "Nuestro objetivo es brindarte un servicio de calidad";
+  btnLegacy.textContent = "Nuestro propósito";
+  btnHistory.textContent = "Nuestra historia";
 
-  div_buttons.setAttribute("id", "buttons-introduction");
-  div_introduction.classList.add("about-introduction");
-  div_image_background.classList.add("image-legacy");
+  divButtons.setAttribute("id", "buttons-introduction");
+  divIntro.classList.add("about-introduction");
+  divImgBackground.classList.add("image-legacy");
 
-  div_buttons.appendChild(button_legacy);
-  div_buttons.appendChild(button_history);
-  div_introduction.appendChild(p);
-  div_introduction.appendChild(div_buttons);
-  div_image_background.appendChild(div_introduction);
+  divButtons.appendChild(btnLegacy);
+  divButtons.appendChild(btnHistory);
+  divIntro.appendChild(p);
+  divIntro.appendChild(divButtons);
+  divImgBackground.appendChild(divIntro);
 
   section.classList.add("title");
-  section.appendChild(div_image_background);
+  section.appendChild(divImgBackground);
 
   return section;
 }
@@ -50,7 +50,7 @@ function createSectionCompanyInfo() {
   const h2 = document.createElement("h2");
   const p = document.createElement("p");
 
-  h2.textContent = "What we do";
+  h2.textContent = "Que hacemos";
   p.textContent = `
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
   repellat itaque id amet eius quidem quibusdam accusantium

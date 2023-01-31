@@ -4,32 +4,20 @@ import { createContentMenu } from "./menu";
 import { createContentAboutUs } from "./about";
 import { createContentContactUs } from "./contact";
 
-const slidePrevious = document.querySelector(".prev");
-const slideNext = document.querySelector(".next");
-const dots = document.querySelectorAll(".dot");
-const navbarItems = document.querySelector(".navbar-menu");
-const btnMenu = document.querySelector(".show-menu");
-
-const menuItemsArr = Array.from(navbarItems.children);
-
-const homeContent = document.querySelector(".main-content");
-const menuContent = document.querySelector(".main-menu-content");
-const aboutContent = document.querySelector(".main-content-about");
-const contactContent = document.querySelector(".main-contact");
-
 let slideIndex = 1;
 
 function createNav() {
-  const li_array = ["Home", "Menú", "Quienes somos", "Contacto"];
+  const menuItems = ["Home", "Menú", "Quienes somos", "Contacto"];
   const h1 = document.createElement("h1");
   const ul = document.createElement("ul");
   const div = document.createElement("div");
   const nav = document.createElement("nav");
   h1.textContent = "Pizza Logo";
-  for (let i = 0; i < li_array.length; i++) {
+
+  for (let i = 0; i < menuItems.length; i++) {
     const li = document.createElement("li");
     const a = document.createElement("a");
-    a.textContent = li_array[i];
+    a.textContent = menuItems[i];
     li.appendChild(a);
     ul.appendChild(li);
   }
@@ -50,11 +38,13 @@ function createFooter() {
     "Política de privacidad",
     "Términos y condiciones",
   ];
+
   const footer = document.createElement("footer");
   const sectionIcons = document.createElement("section");
   const sectionInfo = document.createElement("section");
   const divIcons = document.createElement("div");
   const divLogo = document.createElement("div");
+  const divLogoText = document.createElement("div");
   const divLinks = document.createElement("div");
   const footerLinks = document.createElement("nav");
   const textIcons = document.createElement("p");
@@ -63,7 +53,7 @@ function createFooter() {
   textIcons.textContent = "Siguenos en nuestras redes sociales!";
 
   for (let i = 0; i < iconsArr.length; i++) {
-    const div_background = document.createElement("div");
+    const iconsBackground = document.createElement("div");
     const a = document.createElement("a");
     const icon = document.createElement("i");
 
@@ -71,9 +61,9 @@ function createFooter() {
     a.setAttribute("href", "#");
     a.appendChild(icon);
 
-    div_background.classList.add("icon-background");
-    div_background.appendChild(a);
-    divIcons.appendChild(div_background);
+    iconsBackground.classList.add("icon-background");
+    iconsBackground.appendChild(a);
+    divIcons.appendChild(iconsBackground);
   }
 
   divIcons.classList.add("icons");
@@ -83,10 +73,10 @@ function createFooter() {
 
   sectionInfo.classList.add("terms_and_conditions");
   divLogo.classList.add("logo-footer");
-  const divLogo_text = document.createElement("div");
-  divLogo_text.classList.add("logo");
-  divLogo_text.textContent = "Pizza Logo";
-  divLogo.appendChild(divLogo_text);
+
+  divLogoText.classList.add("logo");
+  divLogoText.textContent = "Pizza Logo";
+  divLogo.appendChild(divLogoText);
 
   divLinks.classList.add("links");
   footerLinks.classList.add("footer-links");
@@ -128,6 +118,16 @@ function createFooter() {
   content.appendChild(createFooter());
 })();
 
+const homeContent = document.querySelector(".main-content");
+const menuContent = document.querySelector(".main-menu-content");
+const aboutContent = document.querySelector(".main-content-about");
+const contactContent = document.querySelector(".main-contact");
+
+const slidePrevious = document.querySelector(".prev");
+const slideNext = document.querySelector(".next");
+const dots = document.querySelectorAll(".dot");
+const btnMenu = document.querySelector(".show-menu");
+
 function showSlide(index) {
   const slides = document.querySelectorAll(".slide");
   const dots = document.querySelectorAll(".dot");
@@ -137,6 +137,7 @@ function showSlide(index) {
   } else if (index > slides.length) {
     slideIndex = 1;
   }
+
   slides.forEach((slide) => {
     slide.style.display = "none";
   });
@@ -159,33 +160,36 @@ function nextSlide(index) {
   showSlide((slideIndex += index));
 }
 
-slidePrevious.addEventListener("click", (e) => {
+slidePrevious.addEventListener("click", () => {
   nextSlide(-1);
 });
 
-slideNext.addEventListener("click", (e) => {
+slideNext.addEventListener("click", () => {
   nextSlide(1);
 });
 
 dots.forEach((dot) => {
   dot.addEventListener("click", (e) => {
-    const dot_index = Number(e.target.getAttribute("dot-index"));
-    currentSlide(dot_index);
+    const dotIndex = Number(e.target.getAttribute("dot-index"));
+    currentSlide(dotIndex);
   });
 });
+
+const navbarItems = document.querySelector(".navbar-menu");
+const menuItemsArr = Array.from(navbarItems.children);
 
 menuItemsArr.forEach((item) => {
   item.addEventListener("click", (e) => {
     if (e.target.textContent === "Home") {
       showContentPage("block", "none", "none", "none");
     }
-    if (e.target.textContent === "Menu") {
+    if (e.target.textContent === "Menú") {
       showContentPage("none", "block", "none", "none");
     }
-    if (e.target.textContent === "Who we are") {
+    if (e.target.textContent === "Quienes somos") {
       showContentPage("none", "none", "block", "none");
     }
-    if (e.target.textContent === "Contact us") {
+    if (e.target.textContent === "Contacto") {
       showContentPage("none", "none", "none", "block");
     }
   });

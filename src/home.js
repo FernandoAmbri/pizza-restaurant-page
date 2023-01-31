@@ -19,15 +19,15 @@ function createHomeContent() {
     "pizza-veggi.jpg",
   ];
   const pizzasArr = [
-    "Pizza hawaina",
-    "Pizza americana",
-    "Pizza mexicana",
-    "Pizza peperoni",
-    "Pizza suprema",
-    "Pizza veggi",
+    "Hawaina",
+    "Americana",
+    "Mexicana",
+    "Pepperoni",
+    "Suprema",
+    "Veggi",
   ];
 
-  h2.textContent = "Las mejores pizzas en Ciudad Juárez!";
+  h2.textContent = "Las mejores pizzas!";
 
   for (let i = 0; i < slidesPizzasArr.length; i++) {
     const divSlide = document.createElement("div");
@@ -70,7 +70,7 @@ function createHomeContent() {
   section.appendChild(divDots);
 
   btnShowMenu.classList.add("show-menu");
-  btnShowMenu.textContent = "Show Menu";
+  btnShowMenu.textContent = "Menú";
 
   main.classList.add("main-content");
   main.appendChild(h2);
