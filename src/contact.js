@@ -15,79 +15,79 @@ function createContentContactUs() {
 
 function createSectionTitle() {
   const section = document.createElement("section");
-  const div_background = document.createElement("div");
+  const divBackground = document.createElement("div");
   const h1 = document.createElement("h1");
 
   h1.textContent = "Contact us";
 
-  div_background.classList.add("image-waitress-background");
-  div_background.appendChild(h1);
+  divBackground.classList.add("image-waitress-background");
+  divBackground.appendChild(h1);
 
-  section.appendChild(div_background);
+  section.appendChild(divBackground);
   return section;
 }
 
 function createSectionForm() {
   const section = document.createElement("section");
-  const div_container = document.createElement("div");
+  const divContainer = document.createElement("div");
 
-  div_container.classList.add("container-form");
-  div_container.appendChild(createRestaurantInfo());
-  div_container.appendChild(createForm());
+  divContainer.classList.add("container-form");
+  divContainer.appendChild(createRestaurantInfo());
+  divContainer.appendChild(createForm());
 
   section.classList.add("form-contact");
-  section.appendChild(div_container);
+  section.appendChild(divContainer);
   return section;
 }
 
 function createRestaurantInfo() {
-  const div_info = document.createElement("div");
+  const restaurantInfo = document.createElement("div");
 
-  div_info.setAttribute("id", "restaurant-info");
-  div_info.innerHTML = `
+  restaurantInfo.setAttribute("id", "restaurant-info");
+  restaurantInfo.innerHTML = `
    <div>
       <i class="fa-regular fa-compass"></i>
-      <address>1200 AVENUE OF THE AMERICAS #A , NEW YORK, NY</address>
+      <address>Av. Morelia 6845, Lino Vargas, 32663, Cd Juárez, Chih.</address>
    </div>
    <div>
       <i class="fa-regular fa-clock"></i>
       <p>
-        Open from <time>10:00</time> to <time>21:00</time> every day.
+        Abierto desde <time>10:00</time> a.m. hasta <time>9:00</time> p.m. todos los días!
       </p>
    </div>
    <div>
       <i class="fa-solid fa-phone"></i>
-      <p>(123)-456-7899</p>
+      <p>(656)-123-0213</p>
    </div>`;
 
-  return div_info;
+  return restaurantInfo;
 }
 
 function createForm() {
   const form = document.createElement("form");
-  const div_form_title = document.createElement("div");
-  const div_form_content = document.createElement("div");
-  const submit = document.createElement("button");
+  const formTitle = document.createElement("div");
+  const formContent = document.createElement("div");
+  const btnSubmit = document.createElement("button");
 
-  div_form_title.classList.add("form-title");
+  formTitle.classList.add("form-title");
 
-  div_form_title.innerHTML = `
+  formTitle.innerHTML = `
     <i class="fa-solid fa-envelope"></i>
     <h3>Message us</h3>`;
 
-  div_form_content.innerHTML = `
+  formContent.innerHTML = `
     <input
     type="text"
     id="full-name"
     name="full-name"
-    placeholder="Full name"
+    placeholder="Nombre completo"
     required
     />
     <input
       type="email"
       id="email"
       name="email"
-      placeholder="Email"
+      placeholder="Correo electrónico"
       required
     />
     <textarea
@@ -96,15 +96,15 @@ function createForm() {
       cols="30"
       rows="10"
       required
-      placeholder="Type your comments..."
+      placeholder="Escribe tus comentarios..."
     ></textarea>`;
 
-  submit.setAttribute("type", "submit");
-  submit.textContent = "Send";
+  btnSubmit.setAttribute("type", "submit");
+  btnSubmit.textContent = "Enviar";
 
-  form.appendChild(div_form_title);
-  form.appendChild(div_form_content);
-  form.appendChild(submit);
+  form.appendChild(formTitle);
+  form.appendChild(formContent);
+  form.appendChild(btnSubmit);
 
   return form;
 }

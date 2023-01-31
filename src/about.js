@@ -1,5 +1,5 @@
 import "./styles.css";
-import { card_info } from "./card-info";
+import { cards } from "./cardInfo";
 
 function createContentAboutUs() {
   const main = document.createElement("main");
@@ -72,13 +72,13 @@ function createSectionCompanyInfo() {
 
 function createSectionAboutTopics() {
   const section = document.createElement("section");
-  const div_background = document.createElement("topics-background");
-  const div_grid = document.createElement("div");
+  const divBackground = document.createElement("topics-background");
+  const gridCards = document.createElement("div");
 
-  div_background.classList.add("topics-background");
-  div_grid.setAttribute("id", "grid-about");
+  divBackground.classList.add("topics-background");
+  gridCards.setAttribute("id", "grid-about");
 
-  card_info.forEach((card) => {
+  cards.forEach((card) => {
     const div = document.createElement("div");
     const i = document.createElement("i");
     const h3 = document.createElement("h3");
@@ -92,13 +92,13 @@ function createSectionAboutTopics() {
     div.appendChild(i);
     div.appendChild(h3);
     div.appendChild(p);
-    div_grid.appendChild(div);
+    gridCards.appendChild(div);
   });
 
-  div_background.appendChild(div_grid);
+  divBackground.appendChild(gridCards);
 
   section.classList.add("about-topics");
-  section.appendChild(div_background);
+  section.appendChild(divBackground);
   return section;
 }
 
